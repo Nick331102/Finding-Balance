@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #0A4A6A;
+    --nav-link-color: #AFCADD;
+    --white: #ffff;
+    --soft-pink: #BD8485;
+    --robin-headline: ##544545;
+    --robin-text: #E5E0E0;
+    --form-titles: #CA7A77;
+    --headline-font: 'Dancing Script', cursive;
+    --paragraphs: 'Roboto', sans-serif;
+}
+
+main {
+    max-width: 1400px;
+    margin-inline: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: var(--dark-blue);
+}
+
+
+.nav__link {
+    text-decoration: none;
+    font-family: var(--headline-font);
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.logo {
+    text-decoration: none;
+    font-family: var(--headline-font);
+    font-size: 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.nav__link:nth-of-type(1) {
+    margin-right: 40px;
+}
+
+.nav__link:nth-of-type(2) {
+    margin-right: 40px;
+}
+
+.nav__link:hover,
+.logo:hover {
+    color: var(--form-titles);
+    transition: 0.2s ease-in-out;
+}
+
+@media(max-width: 730px) {
+    .nav__right {
+        display: none;
+    }
+}
