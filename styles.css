@@ -16,6 +16,10 @@
     --paragraphs: 'Roboto', sans-serif;
 }
 
+
+
+/* nav ******************************/
+
 main {
     max-width: 1400px;
     margin-inline: auto;
@@ -58,8 +62,197 @@ nav {
     transition: 0.2s ease-in-out;
 }
 
+.hamburger__menu {
+    display: none;
+}
+
+/* hero **************************/
+.hero {
+    height: 700px;
+    background-image: url("/assets/oceanrocls.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(62, 58, 68, 0.281);
+
+
+}
+
+.hero__text--container {
+    max-width: 600px;
+    text-align: center;
+    padding-top: 120px;
+    margin-left: 20px;
+
+
+}
+
+.hero__title {
+    font-size: calc(1.3rem + 2vw);
+    font-family: var(--headline-font);
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.hero__description {
+    font-size: calc(.8rem + 1vw);
+    line-height: 1.6;
+    font-family: var(--paragraphs);
+    color: rgb(75, 64, 64);
+}
+
+/* Robin About **************/
+.robin__hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 700px;
+    overflow: hidden;
+    padding: 50px;
+    background-color: var(--soft-pink);
+    gap: 50px;
+    margin-bottom: 300px;
+}
+
+.robin__image {
+    background-image: url("/assets/robinbest.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 30px;
+    ;
+    border-bottom-right-radius: 30px;
+    ;
+}
+
+.robin__text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.about {
+    font-family: var(--headline-font);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #594444;
+}
+
+.background {
+    font-size: 2rem;
+    font-family: var(--headline-font);
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #594444;
+}
+
+.robin__desc {
+    line-height: 1.6;
+    font-size: 1.3rem;
+}
+
+
+
+
+/* Responsive nav ********************/
 @media(max-width: 730px) {
     .nav__right {
         display: none;
     }
+
+    nav {
+        position: relative;
+    }
+
+    .hamburger__menu {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 50;
+    }
+
+    .nav__right {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 30vh;
+        background-color: var(--dark-blue);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateY(-150%);
+        transition: 0.3s ease;
+        padding: 50px 0 50px 80px;
+    }
+
+    .nav__right.show {
+        transform: translateY(-0%);
+    }
+
+    .nav__link:nth-of-type(1) {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .nav__link:nth-of-type(2) {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+
+    .line {
+        width: 90%;
+        height: 2px;
+        background: var(--white);
+        margin-bottom: 5px;
+    }
+
+
+    .hamburger__menu.clicked .line-1 {
+
+        transform: rotate(-45deg) translate(-5px, 11px);
+        transition: 0.2s ease;
+    }
+
+    .hamburger__menu.clicked .line-2 {
+        opacity: 0;
+    }
+
+    .hamburger__menu.clicked .line-3 {
+
+        transform: rotate(45deg) translate(3px, -5px);
+        transition: 0.2s ease;
+    }
+}
+
+/* Responsive Hero *******************/
+
+@media(max-width: 730px) {
+    .hero {
+        background-position: 25% 15%;
+    }
+
+    .hero__text--container {
+        padding-top: 40px;
+        ;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .hero {
+        resize: both;
+        height: 650px;
+        background-position: right;
+    }
+
+
 }
